@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"strings"
-	"time"
 
 	"taylz.io/db"
 	"taylz.io/db/mysql"
@@ -12,6 +11,12 @@ import (
 	"taylz.io/env"
 	"taylz.io/log"
 	"taylz.io/types"
+)
+
+const (
+	envdh = "DB_HOST"
+	envdn = "DB_NAME"
+	envpd = "PATCH_DIR"
 )
 
 // HelpMessage is printed when you use arg "-help" or -"h"
@@ -43,8 +48,8 @@ func main() {
 
 	logger := log.StdOutService(log.LevelDebug, log.DefaultFormatWithColor())
 	logger.With(types.Dict{
-		"DB_NAME":   env["DB_NAME"],
-		"PATCH_DIR": env["PATCH_DIR"],
+		envdn: env[envdn],
+		envpd: env[envpd],
 	}).Debug("db-patch")
 
 	if types.Bool(env["help"]) || types.Bool(env["h"]) {
@@ -58,8 +63,8 @@ func main() {
 		return
 	}
 	logger.With(types.Dict{
-		"HOST": env["DB_HOST"],
-		"NAME": env["DB_NAME"],
+		envdh: env[envdh],
+		envdn: env[envdn],
 	}).Info("opened connection")
 
 	// get current patch info
@@ -118,7 +123,7 @@ func main() {
 			"PatchID":   pid,
 			"PatchFile": pf,
 		})
-		tStart := time.Now()
+		tStart := types.NewTime()
 		sql, err := ioutil.ReadFile(pf)
 
 		if err = db.ExecTx(conn, string(sql)); err != nil {
@@ -128,7 +133,7 @@ func main() {
 			log.Add("Error", err).Error("failed to update patch number")
 			return
 		}
-		log.Add("Time", time.Now().Sub(tStart)).Info("applied patch")
+		log.Add("Time", types.NewTime().Sub(tStart)).Info("applied patch")
 	}
 
 	logger.Add("Patch", pid-1).Info("done")
