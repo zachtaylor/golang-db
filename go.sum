@@ -4,7 +4,7 @@ github.com/konsorten/go-windows-terminal-sequences v1.0.3 h1:CE8S1cTafDpPvMhIxNJ
 github.com/konsorten/go-windows-terminal-sequences v1.0.3/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 taylz.io/env v0.0.0-20200721050000-92bc9c3196ca h1:j6mTBuSHXTAHv8NUAbRgzY3yaxUe6+wy5bbXnuvukqM=
 taylz.io/env v0.0.0-20200721050000-92bc9c3196ca/go.mod h1:CQ9/AuCN6SaMgRlNeyrOBl5ZGObUSdJssvROEdbRf9w=
-taylz.io/log v0.0.0-20200904191806-5ddfd8b1458e h1:IhS+hENpKkbePPt8eCI4FDo6DsCL/sCL7/KmNgLofY8=
-taylz.io/log v0.0.0-20200904191806-5ddfd8b1458e/go.mod h1:pLmf+emokVwhBv62cg0IXM7OHQPnuyQWfsuHisMWqNw=
-taylz.io/types v0.0.0-20200904175719-2b0ec478c981 h1:090m09VUxeE/P9dr5GMFt1x4GCqbJoqkNt+aPtrWMGQ=
-taylz.io/types v0.0.0-20200904175719-2b0ec478c981/go.mod h1:duGGEn53l33JpRGPke7klxNlazQ0kxeWHeT38TYO5V8=
+taylz.io/log v0.0.0-20201105000000-91b96784077a h1:1eNXDoaSafueOGmf2gICM+LqXBY/ymduOtfXPWrkKHs=
+taylz.io/log v0.0.0-20201105000000-91b96784077a/go.mod h1:L1zr12K7U1b0W4N335p0bfAf4ex4m1wjrWbOsL6bFj8=
+taylz.io/types v0.0.0-20201105000000-635671143acf h1:yTDU/6iU5k/K7Joyg5UD1DCheDy2FTpMwNcpXccPMNw=
+taylz.io/types v0.0.0-20201105000000-635671143acf/go.mod h1:duGGEn53l33JpRGPke7klxNlazQ0kxeWHeT38TYO5V8=
